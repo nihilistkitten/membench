@@ -1,2 +1,5 @@
+save/
+data.csv
+bench.png
 main
 *.o

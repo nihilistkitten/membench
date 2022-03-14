@@ -1,19 +1,22 @@
 #include "bench.h"
 #include <stdio.h>
 
-#define NITERS 1000000
+#define NITERS 10000000
+#define MAX_BUFFER 1 << 10
+#define NSIZES 100
 
 void bench_and_print(size_t buffer_size) {
   double mean_time = bench(buffer_size, NITERS);
-  printf("%lu, %f\n", buffer_size / 1000, mean_time);
+  printf("%lu,%f\n", buffer_size / 1000, mean_time);
 }
 
 int main() {
-  printf("Buffer Size (kb), Time (ns)\n");
+  printf("Buffer Size (kb),Time (ns)\n");
 
-  for (int16_t i = 0; i < 20; i++) {
-    // start at 1kb
-    bench_and_print(1000 << i);
+  const int32_t diff = (MAX_BUFFER) / NSIZES;
+
+  for (int32_t i = diff; i < MAX_BUFFER; i += diff) {
+    bench_and_print(1000 * i);
   }
 
   return 0;
