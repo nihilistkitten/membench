@@ -4,7 +4,8 @@ OPT := -O3
 CFLAGS :=  $(OPT) $(WARN)
 
 HEADERS := types.h
-DEPS := $(HEADERS)
+OBJECTS := bench.o
+DEPS := $(HEADERS) $(OBJECTS)
 
 all: main
 
@@ -14,8 +15,8 @@ main: main.c $(DEPS)
 test: test.o
 	./test.o
 
-%.o: %.c $(DEPS)
-	$(CXX) -o $@ $< $(CFLAGS)
+%.o: %.c
+	$(CXX) -c $< $(CFLAGS)
 
 clean:
 	-rm -f main
