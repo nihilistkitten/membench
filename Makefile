@@ -1,5 +1,5 @@
 CXX := gcc
-WARN := -Wall -Werror -pedantic
+WARN := -Wall -Werror -Wextra -pedantic
 OPT := -O3
 CFLAGS :=  $(OPT) $(WARN)
 
