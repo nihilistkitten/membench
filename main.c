@@ -9,9 +9,10 @@ void bench_and_print(size_t buffer_size) {
 }
 
 int main() {
-  printf("Size (kb), Time (ns)\n");
+  printf("Buffer Size (kb), Time (ns)\n");
 
   for (int16_t i = 0; i < 20; i++) {
+    // start at 1kb
     bench_and_print(1000 << i);
   }
 
