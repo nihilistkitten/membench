@@ -23,7 +23,6 @@ double bench(size_t buffer_size, size_t niters) {
     exit(1);
   }
 
-  srand(0);
   for (counter = 0; counter < buffer_size; counter++) {
     buffer[counter] = rand();
   }

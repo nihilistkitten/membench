@@ -7,6 +7,12 @@ import seaborn as sns
 sns.set_theme()
 
 csv = pd.read_csv("data.csv")
-sns.relplot(x=csv["Buffer Size (kb)"], y=csv["Time (ns)"])
+sns.lmplot(
+    x="Buffer Size (kb)",
+    y="Mean Latency per Read (ns)",
+    data=csv,
+    order=2,
+    ci=None,
+)
 
 plt.savefig("bench.png")
