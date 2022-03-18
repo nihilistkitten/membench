@@ -1,5 +1,5 @@
 CXX := gcc
-WARN := -Wall -Werror -Wextra -pedantic
+WARN := -Wall -Werror -Wextra -pedantic 
 OPT := -O3
 CFLAGS := $(OPT) $(WARN)
 
@@ -18,9 +18,6 @@ data.csv: main
 main: main.c $(DEPS)
 	$(CXX) -o $@ $^ $(CFLAGS)
 
-test: test.o
-	./test.o
-
 %.o: %.c
 	$(CXX) -c $< $(CFLAGS)
 
@@ -30,4 +27,4 @@ clean:
 	-rm -f data.csv
 	-rm -f bench.png
 
-.PHONY: all clean test
+.PHONY: all clean
