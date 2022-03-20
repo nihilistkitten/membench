@@ -2,8 +2,8 @@
 #include <stdio.h>
 
 #define NITERS 1e7
-#define MAX_BUFFER 1 << 30
-#define NSIZES 100
+#define MAX_BUFFER 100
+#define NSIZES 20
 
 #define BYTE_TO_KB 1000
 
@@ -19,7 +19,7 @@ int main() {
 
   srand(0);
   for (int32_t i = diff; i < MAX_BUFFER; i += diff) {
-    bench_and_print(i);
+    bench_and_print(i * BYTE_TO_KB);
   }
 
   return 0;

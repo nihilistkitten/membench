@@ -1,5 +1,5 @@
 save/
-data.csv
-bench.png
 main
+*.csv
+*.png
 *.o
