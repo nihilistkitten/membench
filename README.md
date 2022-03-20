@@ -95,7 +95,7 @@ decipher, here is a run of 20 buffer sizes in even intervals up to 100kb on patt
 This behavior is harder to analyze. I think it's likely that the overhead is
 hurting us here.
 
-## Analysis
+### Conclusion
 
 It's pretty clear that we have successfully identified patty's L2 and L3 cache
 sizes as lying around 500kb and 16mb. The spikes occur because the caches are no
